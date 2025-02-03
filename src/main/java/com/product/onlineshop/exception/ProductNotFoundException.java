@@ -1,4 +1,4 @@
-package com.product.OnlineShop.exception;
+package com.product.onlineshop.exception;
 
 public class ProductNotFoundException extends Exception{
     private String message;

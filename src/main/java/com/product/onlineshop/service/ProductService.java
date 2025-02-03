@@ -1,7 +1,7 @@
-package com.product.OnlineShop.service;
+package com.product.onlineshop.service;
 
-import com.product.OnlineShop.entity.Product;
-import com.product.OnlineShop.exception.ProductNotFoundException;
+import com.product.onlineshop.entity.Product;
+import com.product.onlineshop.exception.ProductNotFoundException;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;

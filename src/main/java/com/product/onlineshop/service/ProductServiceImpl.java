@@ -1,9 +1,9 @@
-package com.product.OnlineShop.service;
+package com.product.onlineshop.service;
 
-import com.product.OnlineShop.client.DemoClient;
-import com.product.OnlineShop.entity.Product;
-import com.product.OnlineShop.exception.ProductNotFoundException;
-import com.product.OnlineShop.repository.ProductRepository;
+import com.product.onlineshop.client.DemoClient;
+import com.product.onlineshop.entity.Product;
+import com.product.onlineshop.exception.ProductNotFoundException;
+import com.product.onlineshop.repository.ProductRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
@@ -11,15 +11,24 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
-    @Autowired
+
     private ProductRepository productRepository;
 
     @Autowired
-    DemoClient democlient;
+    public ProductServiceImpl(ProductRepository productRepository){
+        this.productRepository=productRepository;
+    }
+
+
+    private DemoClient democlient;
+
+    @Autowired
+    public ProductServiceImpl(DemoClient democlient){
+        this.democlient=democlient;
+    }
 
     @Override
     public Product saveProduct(Product product){

@@ -1,4 +1,4 @@
-package com.product.OnlineShop.entity;
+package com.product.onlineshop.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

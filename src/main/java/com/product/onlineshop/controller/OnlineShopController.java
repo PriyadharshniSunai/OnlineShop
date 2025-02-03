@@ -1,9 +1,8 @@
-package com.product.OnlineShop.controller;
+package com.product.onlineshop.controller;
 
-import com.product.OnlineShop.client.DemoClient;
-import com.product.OnlineShop.entity.Product;
-import com.product.OnlineShop.exception.ProductNotFoundException;
-import com.product.OnlineShop.service.ProductService;
+import com.product.onlineshop.entity.Product;
+import com.product.onlineshop.exception.ProductNotFoundException;
+import com.product.onlineshop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpStatus;
@@ -16,11 +15,13 @@ import java.util.concurrent.CompletableFuture;
 @RestController
 public class OnlineShopController {
 
-    @Autowired
+
     private ProductService productService;
 
     @Autowired
-    private ApplicationContext context;
+    public OnlineShopController(ProductService productService){
+        this.productService=productService;
+    }
 
     @GetMapping(path = "/products/{category}", produces="application/json")
     public ResponseEntity<List<Product>> getProducts(@PathVariable String category, @RequestParam Integer quantity, @RequestParam Double price)throws ProductNotFoundException {

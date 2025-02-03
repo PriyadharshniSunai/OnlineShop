@@ -1,4 +1,4 @@
-package com.product.OnlineShop.model;
+package com.product.onlineshop.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Data
-public class Price {
-    private String Currency;
-    private Double amount;
+public class Attribute {
+    private String name;
+    private String value;
 }
