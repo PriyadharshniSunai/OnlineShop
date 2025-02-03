@@ -10,6 +10,6 @@ import lombok.ToString;
 @ToString
 @Data
 public class Price {
-    private String Currency;
+    private String currency;
     private Double amount;
 }

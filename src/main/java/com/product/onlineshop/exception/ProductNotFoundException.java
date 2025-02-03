@@ -1,7 +1,7 @@
 package com.product.onlineshop.exception;
 
 public class ProductNotFoundException extends Exception{
-    private String message;
+    private final String message;
 
     public ProductNotFoundException(String message){
         super(message);

@@ -9,9 +9,9 @@ import java.util.List;
 @ToString
 @Data
 public class ProductResponse {
-    private String Name;
-    private String Brand;
-    private String Description;
+    private String name;
+    private String brand;
+    private String description;
     private Price price;
     private Inventory inventory;
     private List<Attribute> attribute;

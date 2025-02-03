@@ -16,17 +16,11 @@ import java.util.concurrent.CompletableFuture;
 public class ProductServiceImpl implements ProductService {
 
     private ProductRepository productRepository;
-
-    @Autowired
-    public ProductServiceImpl(ProductRepository productRepository){
-        this.productRepository=productRepository;
-    }
-
-
     private DemoClient democlient;
 
     @Autowired
-    public ProductServiceImpl(DemoClient democlient){
+    public ProductServiceImpl(ProductRepository productRepository,DemoClient democlient ){
+        this.productRepository=productRepository;
         this.democlient=democlient;
     }
 
