@@ -22,6 +22,11 @@ public class OnlineShopController {
         this.productService=productService;
     }
 
+    @GetMapping(path="/test")
+    public  ResponseEntity<String> testService(){
+        return new ResponseEntity<>("Test Message", HttpStatus.OK);
+    }
+
     @GetMapping(path = "/products/{category}", produces="application/json")
     public ResponseEntity<List<Product>> getProducts(@PathVariable String category, @RequestParam Integer quantity, @RequestParam Double price)throws ProductNotFoundException {
         List<Product> productList= productService.fetchProductList(category);
