@@ -24,7 +24,7 @@ public class OnlineShopController {
 
     @GetMapping(path="/test")
     public  ResponseEntity<String> testService(){
-        return new ResponseEntity<>("Test Message", HttpStatus.OK);
+        return new ResponseEntity<>("Test service - Service up and running", HttpStatus.OK);
     }
 
     @GetMapping(path = "/products/{category}", produces="application/json")
